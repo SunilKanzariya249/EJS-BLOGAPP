@@ -10,6 +10,8 @@ const {
   checkForAuthenticationCookie,
 } = require("./middlewares/authentication");
 app.use(express.static(path.resolve("./public")))
+
+
 const PORT = 8000;
 mongoose.connect("mongodb://localhost:27017/blogify").then(() => {
   console.log("mongodb connected");
