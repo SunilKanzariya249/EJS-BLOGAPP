@@ -6,38 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add New Blog</title>
   </head>
-  <body>
-    <%- include('./partials/nav') %> <%- include('./partials/script') %>
-    <div class="container mt-3">
-      <form action="/blog" method="post" enctype="multipart/form-data">
-        <div class="mb-3">
-          <label for="coverImage" class="form-label">Cover Image</label>
-          <input
-            type="file"
-            class="form-control"
-            id="coverImage"
-            name="coverImage"
-            aria-describedby="coverImage"
-          />
+
+  <body class="bg-light">
+
+    <%- include('./partials/nav') %>
+
+    <div class="container d-flex justify-content-center py-5">
+
+      <div class="col-lg-6 col-md-8 col-12">
+
+        <div class="card shadow border-0">
+
+          <div class="card-body p-4">
+
+            <h3 class="text-center fw-bold mb-4">Create New Blog</h3>
+
+            <form action="/blog" method="post" enctype="multipart/form-data">
+
+              <div class="mb-3">
+                <label for="coverImage" class="form-label fw-semibold">
+                  Cover Image
+                </label>
+
+                <input
+                  type="file"
+                  class="form-control"
+                  id="coverImage"
+                  name="coverImage"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="title" class="form-label fw-semibold">
+                  Blog Title
+                </label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  name="title"
+                  placeholder="Enter blog title"
+                  required
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="body" class="form-label fw-semibold">
+                  Blog Content
+                </label>
+
+                <textarea
+                  name="body"
+                  class="form-control"
+                  id="body"
+                  rows="6"
+                  placeholder="Write your blog content here..."
+                  required
+                ></textarea>
+              </div>
+
+              <button class="btn btn-primary w-100">
+                Publish Blog
+              </button>
+
+            </form>
+
+          </div>
+
         </div>
-        <div class="mb-3">
-          <label for="title" class="form-label">Title</label>
-          <input
-            type="text"
-            class="form-control"
-            id="title"
-            name="title"
-            aria-describedby="title"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="body" class="form-label">body</label>
-          <textarea name="body" class="form-control" id="body"></textarea>
-        </div>
-        <div class="mb-3">
-          <button class="btn btn-primary">Submit</button>
-        </div>
-      </form>
+
+      </div>
+
     </div>
+
+    <%- include('./partials/script') %>
+
   </body>
 </html>
